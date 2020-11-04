@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lesson 2</title>
+</head>
+
+<body>
+    <!--Реализовать функцию с тремя параметрами: function mathOperation(arg1, arg2, operation),
+где arg1, arg2 — значения аргументов, operation — строка с названием операции. В
+зависимости от переданного значения выполнить одну из арифметических операций
+(использовать функции из пункта 5) и вернуть полученное значение (применить switch).
+-->
+    <script>
+        function addition(a, b) {
+            return 'сумма чисел равна ' + (a + b);
+        }
+
+        function subtraction(a, b) {
+            return 'разность чисел равна ' + (a - b);
+        }
+
+        function multiplication(a, b) {
+            return 'произведение чисел равно ' + (a * b);
+        }
+
+        function division(a, b) {
+            if (b == 0) {
+                return 'на 0 делить нельзя';
+            }
+            return 'частное чисел равно ' + (a / b);
+        }
+
+        function mathOperation(arg1, arg2, operation) {
+            switch (operation) {
+                case '+':
+                    return addition(arg1, arg2);
+                case '-':
+                    return subtraction(arg1, arg2);
+                case '*':
+                    return multiplication(arg1, arg2);
+                case '/':
+                    return division(arg1, arg2);
+                default:
+                    return 'знак операции не опознан\nвведите один из знаков + - * /'
+            }
+        }
+
+        let a = +prompt('введите первое число')
+        let b = +prompt('введите второе число')
+        let operation = prompt('введите знак операции')
+
+        alert(mathOperation(a, b, operation))
+    </script>
+
+</body>
+
+</html>

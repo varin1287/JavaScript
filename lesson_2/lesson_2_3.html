@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lesson 2</title>
+</head>
+
+<body>
+    <!--Объявить две целочисленные переменные — a и b и задать им произвольные начальные значения. 
+        Затем написать скрипт, который работает по следующему принципу:
+            если a и b положительные, вывести их разность;
+            если а и b отрицательные, вывести их произведение;
+            если а и b разных знаков, вывести их сумму;
+            Ноль можно считать положительным числом.-->
+    <script>
+        function arithmetic(a, b) {
+            if (a >= 0 && b >= 0) {
+                return 'разность равна ' + (a - b);
+            } else if (a < 0 && b < 0) {
+                return 'произведение равно ' + (a * b);
+            } else {
+                return 'сумма равна ' + (a + b);
+            }
+        }
+
+        let a, b;
+        a = +prompt('введите a');
+        b = +prompt('введите b');
+        alert(arithmetic(a, b))
+    </script>
+
+</body>
+
+</html>

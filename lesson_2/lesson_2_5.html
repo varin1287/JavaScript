@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lesson 2</title>
+</head>
+
+<body>
+    <!--Реализовать четыре основные арифметические операции в виде функций с двумя
+параметрами. Обязательно использовать оператор return-->
+    <script>
+        function addition(a, b) {
+            return 'сумма чисел равна ' + (a + b);
+        }
+
+        function subtraction(a, b) {
+            return 'разность чисел равна ' + (a - b);
+        }
+
+        function multiplication(a, b) {
+            return 'произведение чисел равно ' + (a * b);
+        }
+
+        function division(a, b) {
+            if (b == 0) {
+                return 'на 0 делить нельзя'
+            }
+            return 'частное чисел равно ' + (a / b);
+        }
+
+        let a = +prompt('введите первое число')
+        let b = +prompt('введите второе число')
+
+        alert(addition(a, b))
+        alert(subtraction(a, b))
+        alert(multiplication(a, b))
+        alert(division(a, b))
+    </script>
+
+</body>
+
+</html>
