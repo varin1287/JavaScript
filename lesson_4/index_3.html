@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Lesson 4</title>
+
+</head>
+
+<body>
+    <script>
+        'use strict';
+
+        /*Продолжить работу с интернет-магазином:
+        3.1. В прошлом домашнем задании вы реализовали корзину на базе массивов. Какими объектами можно заменить их элементы?
+        3.2. Реализуйте такие объекты.
+        3.3. Перенести функционал подсчета корзины на объектно-ориентированную базу.
+         */
+
+        'use strict';
+
+        const Basket = {
+            goods: [
+                {
+                    id_product: 111,
+                    product_name: 'яблоки',
+                    price: 2,
+                    quantity: 5
+                },
+                {
+                    id_product: 112,
+                    product_name: 'груши',
+                    price: 4,
+                    quantity: 7
+                },
+                {
+                    id_product: 113,
+                    product_name: 'сливы',
+                    price: 5,
+                    quantity: 12
+                },
+                {
+                    id_product: 114,
+                    product_name: 'персики',
+                    price: 11,
+                    quantity: 0
+                }
+            ],
+            // доделал свою функцию
+            countBasketPrice() {
+                let sum = 0;
+                for (let i = 0; i < this.goods.length; i++) {
+                    sum += (this.goods[i].price * this.goods[i].quantity)
+                }
+                return sum;
+            },
+            // через reduce
+            countBasketPrice_1() {
+                return this.goods.reduce((totalPrice, cartItem) => totalPrice += (cartItem.price * cartItem.quantity), 0);
+            }
+
+        }
+
+        alert('стоимость корзины первый способ ' + Basket.countBasketPrice());
+        alert('стоимость корзины второй способ ' + Basket.countBasketPrice_1());
+
+
+    </script>
+</body>
+
+</html>
