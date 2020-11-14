@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>lesson 5</title>
+    <style>
+        table {
+            border-collapse: collapse;
+        }
+
+        tr {
+            width: 20px;
+            height: 20px;
+        }
+
+        td {
+            border: 1px solid #888;
+            width: 20px;
+            height: 20px;
+            background-color: #eee;
+        }
+    </style>
+</head>
+
+<body>
+    <table id="my_table"></table>
+    <script>
+        'use strict';
+
+
+        function make_table() {
+            const table = document.getElementById('my_table');
+            table.innerHTML = '';
+            let cell_is_black = false;
+
+            let arr = [' ', 'a', 'b', 'c', 'd', 'e', 'f', 'g', 'h'];
+
+
+
+
+            for (let row = 0; row < 8; row++) {
+                const tr = document.createElement('tr');
+
+
+                const td = document.createElement('td');
+                td.innerHTML = 8 - row;
+                tr.appendChild(td);
+
+                table.appendChild(tr);
+                for (let col = 0; col < 8; col++) {
+                    const td = document.createElement('td');
+                    if (cell_is_black) {
+                        td.style.background = 'black';
+                    }
+                    tr.appendChild(td);
+                    cell_is_black = !cell_is_black;
+                }
+                cell_is_black = !cell_is_black;
+            }
+
+            let tr = document.createElement('tr');
+            table.appendChild(tr);
+            for (var i = 0; i < 9; i++) {
+                const td = document.createElement('td');
+                td.innerHTML = arr[i];
+                tr.appendChild(td);
+            }
+        }
+
+
+        make_table();
+
+    </script>
+</body>
+
+</html>
